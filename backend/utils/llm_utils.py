@@ -103,6 +103,15 @@ def call_llm_for_system_prompt(
         reasoning_content_seen = False
         content_tokens_seen = 0
         for chunk in current_request:
+            # Safety check: skip non-standard chunks that lack expected attributes
+            if not hasattr(chunk, 'choices'):
+                if hasattr(chunk, '__str__'):
+                    logger.warning(f"Received non-standard chunk (no 'choices'): {str(chunk)[:200]}")
+                continue
+
+            if not chunk.choices:
+                continue
+
             delta = chunk.choices[0].delta
             reasoning_content = getattr(delta, "reasoning_content", None)
             new_token = delta.content
