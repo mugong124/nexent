@@ -743,3 +743,7 @@ Happy to find a easy-to-use AI Agent Platform
 ::: info BigBen0724 - 2026-03-16
 在体验一众AI工具后，被 Nexent 产品所吸引，希望这一智能体开发平台能赋能我的工作生活！
 :::
+
+::: tip mugong345 - 2026-05-16
+祝Nexent发展越来越好，第一次尝试使用
+:::
